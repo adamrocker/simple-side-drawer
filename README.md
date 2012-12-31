@@ -1,8 +1,8 @@
-SimpleSideDrawer is a simple library to add a drawer navigation into your android application.
+SimpleSideDrawer is an android library to add a drawer navigation into your android application.
 This library has high affinity with other libraries like ActionBarSherlock or etc.
 
 #Easy to add your app a side menu
-Demo display
+![Demo image01](https://lh6.googleusercontent.com/-O-AKV6vo4U4/UOHA9PjYA9I/AAAAAAAAQV4/gayCEMA9q9c/s720/simple_side_drawer01.png)![Demo image02](https://lh5.googleusercontent.com/-hoVDio62tgc/UOHBBU7K0LI/AAAAAAAAQWE/rEkvI2NgNl4/s720/simple_side_drawer02.png)
 
 ###Step1: Add the library
 Add the jar library to your application project
