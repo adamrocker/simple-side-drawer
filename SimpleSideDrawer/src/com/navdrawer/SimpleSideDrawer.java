@@ -121,6 +121,25 @@ public class SimpleSideDrawer extends FrameLayout {
      * {@hide}
      */
     public View setBehindContentView(int behindLayout) {
+        FrameLayout framelayout = new FrameLayout(getContext());
+        View behindMenu = new View(getContext());
+        
+        ViewGroup decor = (ViewGroup) mWindow.getDecorView();
+        ViewGroup above = (ViewGroup) decor.getChildAt(0);
+        decor.removeView(above);
+        framelayout.addView(behindMenu);
+        framelayout.addView(above);
+        
+        decor.addView(framelayout);
+        
+        above.setBackgroundDrawable(decor.getBackground());
+        mAboveView.removeAllViews();
+        mAboveView.addView(above);
+        mAboveView.addView(mOverlay);
+        decor.addView(this);
+        
+        
+        
         mBehindView.removeAllViews();
         View content = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(behindLayout, mBehindView);
         mPaddingRect = new Rect(content.getPaddingLeft(), content.getPaddingTop(), content.getPaddingRight(), content.getPaddingBottom());
