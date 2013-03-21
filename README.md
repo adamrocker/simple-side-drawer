@@ -11,15 +11,19 @@ Add the jar library to your application project
 Add the 2 lines under the onCreate method in an Activity you want to add the side menu.
 
 	protected void onCreate(Bundle data) {
-		super.onCreate(data);
-		setContentView(R.layout.main);
+		super.onCreate( data );
+		setContentView( R.layout.main );
 		
-		mSlidingMenu = new SimpleSideDrawer(this);
-		mSlidingMenu.setBehindContentView(R.layout.behind_menu);
+		mSlidingMenu = new SimpleSideDrawer( this );
+		mSlidingMenu.setLeftBehindContentView( R.layout.behind_menu_left );
 	}
 	
 The behind_menu.xml is the side menu layout. You can add it by calling setBehindeContentView method. That it you have to do for adding the side menu.
 If you want to handle the widget on the side menu, you just call findViewById method as usual.
+
+#### Need the right-side?
+
+	mSlidingMenu.setRightBehindContentView( R.layout.behind_menu_right );
 
 ###Step3: Open/Close the side menu
 You can easy open/close the side menu.
@@ -35,7 +39,7 @@ Of course, a user can close the side menu by dragging the above view.
 - library: .jar file for easy to use
 
 #Lisence
-Copyright 2012, adamrocker (http://www.adamrocker.com).
+Copyright 2012, adamrocker ( http://www.adamrocker.com ).
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License. 
