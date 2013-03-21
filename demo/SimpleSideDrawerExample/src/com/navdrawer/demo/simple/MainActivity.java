@@ -16,12 +16,24 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mNav = new SimpleSideDrawer(this);
-        mNav.setBehindContentView(R.layout.activity_behind_simple);
-        findViewById(R.id.btn).setOnClickListener(new OnClickListener() {
+        mNav.setLeftBehindContentView(R.layout.activity_behind_left_simple);
+        findViewById(R.id.leftBtn).setOnClickListener(new OnClickListener() {
             @Override 
             public void onClick(View v) {
-                mNav.toggleDrawer();
+                mNav.toggleLeftDrawer();
             }
         });
+        
+        
+        mNav.setRightBehindContentView(R.layout.activity_behind_right_simple);
+        
+        findViewById(R.id.rightBtn).setOnClickListener(new OnClickListener() {
+            @Override 
+            public void onClick(View v) {
+                mNav.toggleRightDrawer();
+            }
+        });
+        
+        
     }
 }

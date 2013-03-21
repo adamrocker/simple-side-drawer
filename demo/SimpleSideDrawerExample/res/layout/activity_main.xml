@@ -3,13 +3,21 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/leftBtn"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Drawer" />
+        android:text="Left Menu" />
 
+    <Button
+        android:id="@+id/rightBtn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right Menu" />
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
