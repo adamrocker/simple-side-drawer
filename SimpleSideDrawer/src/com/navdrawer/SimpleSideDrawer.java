@@ -164,7 +164,6 @@ public class SimpleSideDrawer extends FrameLayout {
                 float newX = ev.getX();
                 float diffX = -(newX - mRightDragAction.mLastMotionX);
                 int x = mAboveView.getScrollX();
-                System.out.format("[SLIDE] ACTION_MOVE(r): %f, %d\n", newX, x);
                 mRightDragAction.mOpening = newX < mRightDragAction.mLastMotionX;
                 mRightDragAction.mLastMotionX = newX;
                 float nextX = x + diffX;
@@ -365,7 +364,6 @@ public class SimpleSideDrawer extends FrameLayout {
      * Open the left behind view by swiping the front view right
      */
     public void openLeftSide() {
-        System.out.format("[SLIDE] openLeftSide: %d\n", mLeftBehindViewWidth);
         mLeftBehindBase.setVisibility( View.VISIBLE );
         mRightBehindBase.setVisibility( View.GONE );
             
@@ -375,7 +373,6 @@ public class SimpleSideDrawer extends FrameLayout {
     }
     
     public void openRightSide() {
-        System.out.format("[SLIDE] openRightSide: %d\n", mRightBehindViewWidth);
         mRightBehindBase.setVisibility( View.VISIBLE );
         mLeftBehindBase.setVisibility( View.GONE );
         
@@ -397,10 +394,8 @@ public class SimpleSideDrawer extends FrameLayout {
      */
     public void toggleLeftDrawer() {
         if (isClosed()) {
-            System.out.println("[SLIDE] toggleLeft: open");
             openLeftSide();
         } else {
-            System.out.println("[SLIDE] toggleLeft: close");
             closeLeftSide();
         }
     }
@@ -410,10 +405,8 @@ public class SimpleSideDrawer extends FrameLayout {
      */
     public void toggleRightDrawer() {
         if (isClosed()) {
-            System.out.println("[SLIDE] toggleRight: open");
             openRightSide();
         } else {
-            System.out.println("[SLIDE] toggleRight: close");
             closeRightSide();
         }
     }
@@ -444,7 +437,6 @@ public class SimpleSideDrawer extends FrameLayout {
         mLeftBehindViewWidth = mLeftBehindBase.getMeasuredWidth();
         mRightBehindViewWidth = mRightBehindBase.getMeasuredWidth();
 
-        System.out.format("[SLIDE] onMeasure: %d, %d\n", mLeftBehindViewWidth, mRightBehindViewWidth);
         //adjust the behind display area
         ViewGroup decor = (ViewGroup) mWindow.getDecorView();
         Rect rect = new Rect();
