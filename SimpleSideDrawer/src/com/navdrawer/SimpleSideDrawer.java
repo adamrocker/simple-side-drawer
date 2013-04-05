@@ -32,6 +32,7 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -183,13 +184,13 @@ public class SimpleSideDrawer extends FrameLayout {
     };
     
     /**
-     * <p>The default Interpolator of drawer animation is AccelerateDecelerateInterpolator.</p>
+     * <p>The default Interpolator of drawer animation is DecelerateInterpolator(9.9).</p>
      * <p>The default animation duration is 230msec.</p>
      * @see SimpleNavDrawer(Activity act, Interpolator ip, int duration);
      * @param act
      */
     public SimpleSideDrawer(Activity act) {
-        this(act, new AccelerateDecelerateInterpolator(), 180);
+        this(act, new DecelerateInterpolator(0.9f), 180);
     }
     
     public SimpleSideDrawer(Activity act, Interpolator ip, int duration) {
@@ -340,12 +341,18 @@ public class SimpleSideDrawer extends FrameLayout {
         closeLeftSide();
     }
     
+    /**
+     * Close the left-side behind view
+     */
     public void closeLeftSide() {
         int curX = -mLeftBehindViewWidth;//mAboveView.getScrollX();
         mScroller.startScroll(curX, 0, -curX, 0, mDurationLeft);
         invalidate();
     }
     
+    /**
+     * Close the right-side behide view 
+     */
     public void closeRightSide() {
         int curX = mRightBehindViewWidth;//mAboveView.getScrollX();
         mScroller.startScroll(curX, 0, -curX, 0, mDurationRight);
