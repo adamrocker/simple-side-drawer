@@ -463,6 +463,8 @@ public class SimpleSideDrawer extends FrameLayout {
         } else {
             if (mAboveView.getScrollX() == 0) {
                 mOverlay.setVisibility(View.GONE);
+                mLeftBehindBase.setVisibility(View.GONE);
+                mRightBehindBase.setVisibility(View.GONE);
             } else {
                 mOverlay.setVisibility(View.VISIBLE);
             }
