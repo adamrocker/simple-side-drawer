@@ -44,7 +44,7 @@ http://www.slideshare.net/adamrocker/simple-side-drawer2
 - library: .jar file for easy to use
 - doc: The document of this library
 
-#Lisence
+#License
 Copyright 2013, adamrocker ( http://www.adamrocker.com ).
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
